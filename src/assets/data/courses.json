@@ -1,0 +1,78 @@
+[
+  {
+    "stdemail" : "abc@gmail.com",
+    "stdid" : "1",
+    "stdname" : "Anusha",
+    "courseID" : "ML01",
+    "courseCategory" : "AI/TextClassification",
+    "courseName" : "Machine Learning",
+    "description" : "some data about data",
+    "duration" : "2h 30m",
+    "tutorName" : "Albert Einstein",
+    "imglink" : "/assets/images/mlcard.png"
+  },
+  {
+    "stdemail" : "jkl@gmail.com",
+    "stdid" : "2",
+    "stdname" : "Pankaj",
+    "courseID" : "DS01",
+    "courseCategory" : "DS/Models",
+    "courseName" : "Data Science Master",
+    "description" : "some data about data",
+    "duration" : "4h 45m",
+    "tutorName" : "Isaac Newton",
+    "imglink" : "/assets/images/data-science.jpg"
+  },
+  {
+    "stdemail" : "xyz@gmail.com",
+    "stdid" : "3",
+    "stdname" : "Rahul",
+    "courseID" : "CS01",
+    "courseCategory" : "CN/CyberSecurity",
+    "courseName" : "Ethical Hacking",
+    "description" : "some data about data",
+    "duration" : "3h 15m",
+    "tutorName" : "APJ Abdul Kalam",
+    "imglink" : "/assets/images/ethical-hack.jpg"
+  },
+  {
+    "stdemail" : "pqr@gmail.com",
+    "stdid" : "4",
+    "stdname" : "Pallavi",
+    "courseID" : "P01",
+    "courseCategory" : "Programming/Python",
+    "courseName" : "Python",
+    "description" : "some data about data",
+    "duration" : "2h",
+    "tutorName" : "Marie Curie",
+    "imglink" : "/assets/images/python.jpg"
+  },
+  {
+    "stdemail" : "uvw@gmail.com",
+    "stdid" : "5",
+    "stdname" : "Shraddha",
+    "courseID" : "P02",
+    "courseCategory" : "Programming/C++",
+    "courseName" : "Object Oriented Programming",
+    "description" : "some data about data",
+    "duration" : "30m",
+    "tutorName" : "Stephen Hawking",
+    "imglink" : "/assets/images/c++.jpg"
+  },
+  {
+    "stdemail" : "ghi@gmail.com",
+    "stdid" : "6",
+    "stdname" : "Ranjeet",
+    "courseID" : "ML02",
+    "courseCategory" : "AI/Nueral Networks",
+    "courseName" : "Convolutional Neural Networks",
+    "description" : "some data about data",
+    "duration" : "5h 20m",
+    "tutorName" : "Thomas Edison",
+    "imglink" : "/assets/images/Convolutional.png"
+  }
+]
+
+    
+   
+        

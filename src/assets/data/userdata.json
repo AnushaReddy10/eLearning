@@ -1,0 +1,38 @@
+[
+    {
+        "email" : "abc@gmail.com",
+        "id" : "1",
+        "loggedIn" : "true",
+        "name" : "Anusha"
+    },
+    {
+        "email" : "jkl@gmail.com",
+        "id" : "2",
+        "loggedIn" : "true",
+        "name" : "Pankaj"
+    },
+    {
+        "email" : "xyz@gmail.com",
+        "id" : "3",
+        "loggedIn" : "false",
+        "name" : "Rahul"
+    },
+    {
+        "email" : "pqr@gmail.com",
+        "id" : "4",
+        "loggedIn" : "true",
+        "name" : "Pallavi"
+    },
+    {
+        "email" : "uvw@gmail.com",
+        "id" : "5",
+        "loggedIn" : "true",
+        "name" : "Shraddha"
+    },
+    {
+        "email" : "ghi@gmail.com",
+        "id" : "6",
+        "loggedIn" : "true",
+        "name" : "Ranjeet"
+    }
+]

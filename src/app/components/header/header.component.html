@@ -1,0 +1,212 @@
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark"> 
+    <a class="navbar-brand" href="#">
+        <img src="/assets/images/brand-logo.jpg" style="max-width:30px; margin-top: 0px;" class="img-fluid">
+        <span style="display: inline-block;">ULearn</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">AboutUs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Data Science</a>
+            <a class="dropdown-item" href="#">Personal Development</a>
+            <a class="dropdown-item" href="#">Programming Languages</a>
+            <a class="dropdown-item" href="#">Information Technology</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Certifications</a>
+            <a class="dropdown-item" href="#">Upcoming Quizzes</a>
+            </div>
+        </li>
+        </ul>
+        <form class="form-inline ml-auto mr-auto" action="#">
+            <input class="form-control form-control-sm-1 ml-3 w-75" type="text" size="60" placeholder="What are you looking for?"
+              aria-label="Search" style="border: none; outline: none; overflow: hidden;">
+        </form>
+        <div class="nav navbar-nav " style="display:flex;">
+            <div [ngSwitch]="loggedIN">
+                <div *ngSwitchCase="false"> <button type="button" (click)="getuserData()" class="btn btn-primary glow-on-hover">SignIn with Google</button> </div>
+                <div *ngSwitchCase="true">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-success">
+                          <input type="radio" name="options1" id="tutorprofile" autocomplete="off" data-toggle="modal" data-target="#myModalforfacilitator" (click)="showModel()" tabindex="-1" role="dialog" aria-labelledby="exampleModalTutor" aria-hidden="true" checked> Facilitator 
+                        </label>
+                        <div *ngIf="showModal">
+                            <div id="myModalforfacilitator" class="modal fade" >
+                              <div class="modal-dialog modal-dialog-centered" id="modalFullscreen" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabeltutor">Welcome Back {{name}}!  We are as excited as you.</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">   
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col">
+                                                    <form class="card">
+                                                        <div class="card-body row no-gutters align-items-center">
+                                                            <div class="col-auto">
+                                                                <i class="fas fa-search h4 text-body"></i>
+                                                            </div>
+                                                            <!--end of col-->
+                                                            <div class="col-auto">
+                                                                <input class="form-control form-control-borderless" type="search" size="78" placeholder="Explore our courses or search a keyword" style="font-size: 18px;">
+                                                            </div>
+                                                            <!--end of col-->
+                                                            <div class="col-auto">
+                                                                <button class="btn btn-success" type="submit">Search</button>
+                                                            </div>
+                                                            <!--end of col-->
+                                                        </div>
+                                                    </form>
+                                                </div> 
+                                                <!--end of col-->
+                                                <a class="bt more-bt" href="javascript:void(0)" style="text-align: center; text-shadow:1px 1px 0 rgb(68, 68, 68); left:65px;">
+                                                    <span class="fl"></span><span class="sfl"></span><span class="cross"></span><i></i>
+                                                    <b>Add</b>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="container">
+                                            <div class="row row-cols-3 row-cols-md-4" id="mycoursecards">
+                                                <div *ngFor="let entry of mycourses">
+                                                    <div class="col col mb-4">
+                                                        <div class="card mx-auto" style="width: 16rem; height: auto">
+                                                                <img src={{entry.imglink}} class="card-img-top" style="height: 10rem">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">{{entry.courseName}}</h5>
+                                                                    <h6 class="card-subtitle mb-2 text-muted">{{entry.duration}}</h6>
+                                                                    <p class="card-text">{{entry.description}}</p>
+                                                                    <button type="button" class="btn btn-success">Goto Course</button>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                               </div>
+                            </div>
+                        </div>
+                        <label class="btn btn-success" style="margin-right: 50px;">
+                          <input type="radio" name="options2" id="studentprofile" autocomplete="off" data-toggle="modal" data-target="#myModalforlearner" (click)="showModel()" tabindex="-1" role="dialog" aria-labelledby="exampleModalStudent" aria-hidden="true"> Learner
+                        </label>
+                        <div *ngIf="showModal">
+                            <div id="myModalforlearner" class="modal fade">
+                              <div class="modal-dialog modal-dialog-centered" id="modalFullscreen" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabelstudent">Welcome back {{name}}!  We are as excited as you.</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col">
+                                                    <form class="card">
+                                                        <div class="card-body row no-gutters align-items-center">
+                                                            <div class="col-auto">
+                                                                <i class="fas fa-search h4 text-body"></i>
+                                                            </div>
+                                                            <!--end of col-->
+                                                            <div class="col-auto">
+                                                                <input class="form-control form-control-borderless" type="search" size="78" placeholder="Explore our courses or search a keyword" style="font-size: 18px;">
+                                                            </div>
+                                                            <!--end of col-->
+                                                            <div class="col-auto">
+                                                                <button class="btn btn-success" type="submit">Search</button>
+                                                            </div>
+                                                            <!--end of col-->
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!--end of col-->
+                                                <div class="bt more-bt" href="javascript:void(0)" style="text-align: center; text-shadow:1px 1px 0 rgb(68, 68, 68); left:65px;" data-toggle="modal" data-target="#uploadModal">
+                                                    <span class="fl"></span><span class="sfl"></span><span class="cross"></span><i></i>
+                                                    <b>Add</b>
+                                                </div>
+                                                <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelupload" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header">
+                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                          </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form>
+                                                                <div class="form-group">
+                                                                  <label for="exampleFormControlFile1">Example file input</label>
+                                                                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="container">
+                                            <div class="row row-cols-3 row-cols-md-4" id="mycoursecards">
+                                                <div *ngFor="let entry of mycourses">
+                                                    <div class="col mb-4">
+                                                        <div class="card mx-auto" style="width: 16rem; height: auto">
+                                                                <img src={{entry.imglink}} class="card-img-top" style="height: 10rem">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">{{entry.courseName}}</h5>
+                                                                    <h6 class="card-subtitle mb-2 text-muted">{{entry.duration}}</h6>
+                                                                    <p class="card-text">{{entry.description}}</p>
+                                                                    <button type="button" class="btn btn-success">Goto Course</button>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary glow-on-hover">Sign Out</button>
+                </div>
+                <div *ngSwitchDefault> <button type="button" class="btn btn-primary glow-on-hover">SignIn with Google</button> </div> 
+            </div>
+           <!-- <li *ngIf="!LoggedIn" class="nav-item">
+                <button type="button" class="btn btn-primary glow-on-hover">SignIn with Google</button>   
+            </li>
+            <li *ngIf="LoggedIn" class="nav-item">
+                <button type="button" class="btn btn-primary glow-on-hover">Sign Out</button> 
+            </li> -->
+        </div>
+    </div>
+</nav>
